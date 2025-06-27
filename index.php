@@ -20,7 +20,7 @@
         <button type="reset">Reset</button>
     </form>
 
-    <footer> <?php include "./templates/footer.php" ?></footer>
+    <footer> <?php include "./templates/footer.php"; ?></footer>
 
 </body>
 

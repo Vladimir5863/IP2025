@@ -34,8 +34,22 @@ class DAO{
         $statment->execute();
     }
 
-    public function updateOsoba($osoba){
+    public function getById($idOsobe){
+        $statment = $this->db->prepare($this -> SELECTBYID);
+        $statment->bindValue(1, $idOsobe->id);
+        $statment->execute();
+        $result = $statment->fetch(PDO::FETCH_OBJ);
+        return $result;
+    }
+
+    public function updateById($osoba){
+        $statment = $this->db->prepare($this -> UPDATEBYID);
+        $statment->bindValue(1, $osoba->ime);
+        $statment->bindValue(2, $osoba->prezime);
+        $statment->bindValue(3, $osoba->godiste);
+        $statment->bindValue(4, $osoba->id);
+        $statment->execute();
+    }
 
 }
-
 ?>
